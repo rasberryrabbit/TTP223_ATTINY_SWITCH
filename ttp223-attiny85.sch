@@ -1,0 +1,282 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny85-20PU U2
+U 1 1 5DBC2C6C
+P 5100 2900
+F 0 "U2" H 4571 2946 50  0000 R CNN
+F 1 "ATtiny85-20PU" H 4571 2855 50  0000 R CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 5100 2900 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 5100 2900 50  0001 C CNN
+	1    5100 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Reference_Voltage:TL431LP U1
+U 1 1 5DBC42B2
+P 2550 3000
+F 0 "U1" V 2504 2930 50  0000 R CNN
+F 1 "TL431LP" V 2595 2930 50  0000 R CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2550 2850 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/tl431.pdf" H 2550 3000 50  0001 C CIN
+	1    2550 3000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R4
+U 1 1 5DBC5629
+P 3550 3200
+F 0 "R4" H 3618 3246 50  0000 L CNN
+F 1 "4.7k" H 3618 3155 50  0000 L CNN
+F 2 "" V 3590 3190 50  0001 C CNN
+F 3 "~" H 3550 3200 50  0001 C CNN
+	1    3550 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R3
+U 1 1 5DBC623A
+P 3550 2700
+F 0 "R3" H 3618 2746 50  0000 L CNN
+F 1 "4,7k" H 3618 2655 50  0000 L CNN
+F 2 "" V 3590 2690 50  0001 C CNN
+F 3 "~" H 3550 2700 50  0001 C CNN
+	1    3550 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_PNP_EBC Q1
+U 1 1 5DBC7732
+P 3000 2300
+F 0 "Q1" V 3328 2300 50  0000 C CNN
+F 1 "PN2222A" V 3237 2300 50  0000 C CNN
+F 2 "" H 3200 2400 50  0001 C CNN
+F 3 "~" H 3000 2300 50  0001 C CNN
+	1    3000 2300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:VCC #PWR01
+U 1 1 5DBC87BA
+P 1650 2000
+F 0 "#PWR01" H 1650 1850 50  0001 C CNN
+F 1 "VCC" H 1667 2173 50  0000 C CNN
+F 2 "" H 1650 2000 50  0001 C CNN
+F 3 "" H 1650 2000 50  0001 C CNN
+	1    1650 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5DBC9237
+P 1650 3850
+F 0 "#PWR02" H 1650 3600 50  0001 C CNN
+F 1 "GND" H 1655 3677 50  0000 C CNN
+F 2 "" H 1650 3850 50  0001 C CNN
+F 3 "" H 1650 3850 50  0001 C CNN
+	1    1650 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_NMOS_GDS Q2
+U 1 1 5DBC9D6A
+P 7350 2850
+F 0 "Q2" H 7556 2896 50  0000 L CNN
+F 1 "Nch Power MOSFET" H 7556 2805 50  0000 L CNN
+F 2 "" H 7550 2950 50  0001 C CNN
+F 3 "~" H 7350 2850 50  0001 C CNN
+	1    7350 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R2
+U 1 1 5DBCCE4B
+P 2550 2550
+F 0 "R2" H 2618 2596 50  0000 L CNN
+F 1 "1k" H 2618 2505 50  0000 L CNN
+F 2 "" V 2590 2540 50  0001 C CNN
+F 3 "~" H 2550 2550 50  0001 C CNN
+	1    2550 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R1
+U 1 1 5DBCD5A1
+P 2250 2550
+F 0 "R1" H 2318 2596 50  0000 L CNN
+F 1 "1k" H 2318 2505 50  0000 L CNN
+F 2 "" V 2290 2540 50  0001 C CNN
+F 3 "~" H 2250 2550 50  0001 C CNN
+	1    2250 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 3500 5100 3700
+Wire Wire Line
+	5100 3700 4050 3700
+Wire Wire Line
+	1650 3700 1650 3850
+Wire Wire Line
+	2550 3100 2550 3700
+Connection ~ 2550 3700
+Wire Wire Line
+	2550 3700 1650 3700
+Wire Wire Line
+	3550 3350 3550 3700
+Connection ~ 3550 3700
+Wire Wire Line
+	3550 3700 2550 3700
+Wire Wire Line
+	2550 2700 2550 2800
+Wire Wire Line
+	2250 2700 2250 2800
+Wire Wire Line
+	2250 2800 2550 2800
+Connection ~ 2550 2800
+Wire Wire Line
+	2550 2800 2550 2900
+Wire Wire Line
+	1650 2000 1650 2200
+Wire Wire Line
+	1650 2200 2250 2200
+Wire Wire Line
+	2550 2200 2550 2400
+Connection ~ 2550 2200
+Wire Wire Line
+	2550 2200 2800 2200
+Wire Wire Line
+	2250 2200 2250 2400
+Connection ~ 2250 2200
+Wire Wire Line
+	2250 2200 2550 2200
+Wire Wire Line
+	2550 2800 3000 2800
+Wire Wire Line
+	3000 2800 3000 2500
+Wire Wire Line
+	2650 3000 3550 3000
+Wire Wire Line
+	3550 3000 3550 3050
+Wire Wire Line
+	3550 2850 3550 3000
+Connection ~ 3550 3000
+Wire Wire Line
+	3200 2200 3550 2200
+Wire Wire Line
+	3550 2200 3550 2550
+Wire Wire Line
+	3550 2200 4050 2200
+Wire Wire Line
+	5100 2200 5100 2300
+Connection ~ 3550 2200
+$Comp
+L Device:CP C1
+U 1 1 5DBD15F9
+P 4050 2650
+F 0 "C1" H 4168 2696 50  0000 L CNN
+F 1 "4.7u" H 4168 2605 50  0000 L CNN
+F 2 "" H 4088 2500 50  0001 C CNN
+F 3 "~" H 4050 2650 50  0001 C CNN
+	1    4050 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4050 2200 4050 2500
+Connection ~ 4050 2200
+Wire Wire Line
+	4050 2200 5100 2200
+Wire Wire Line
+	4050 2800 4050 3700
+Connection ~ 4050 3700
+Wire Wire Line
+	4050 3700 3550 3700
+Wire Wire Line
+	5700 3000 6800 3000
+Wire Wire Line
+	6800 3000 6800 2850
+Wire Wire Line
+	6800 2850 7150 2850
+Wire Wire Line
+	5100 3700 7450 3700
+Wire Wire Line
+	7450 3700 7450 3050
+Connection ~ 5100 3700
+Text GLabel 4250 1950 2    50   Output ~ 0
+TTP223-VCC
+Wire Wire Line
+	4250 1950 4050 1950
+Wire Wire Line
+	4050 1950 4050 2200
+Text GLabel 4200 3950 2    50   Output ~ 0
+TTP223_GND
+Wire Wire Line
+	4050 3700 4050 3950
+Wire Wire Line
+	4050 3950 4200 3950
+Text GLabel 6300 2650 2    50   Input ~ 0
+TTP223-IO
+Wire Wire Line
+	6300 2650 6100 2650
+Wire Wire Line
+	6100 2650 6100 2900
+Wire Wire Line
+	6100 2900 5700 2900
+Text GLabel 7900 1750 2    50   Output ~ 0
+VCC-LOAD
+Wire Wire Line
+	7900 1750 2250 1750
+Wire Wire Line
+	2250 1750 2250 2200
+Text GLabel 7900 2250 2    50   Output ~ 0
+GND-LOAD
+Wire Wire Line
+	7900 2250 7450 2250
+Wire Wire Line
+	7450 2250 7450 2650
+$Comp
+L Device:R_US R5
+U 1 1 5DBDB28F
+P 5950 2350
+F 0 "R5" H 6018 2396 50  0000 L CNN
+F 1 "10k" H 6018 2305 50  0000 L CNN
+F 2 "" V 5990 2340 50  0001 C CNN
+F 3 "~" H 5950 2350 50  0001 C CNN
+	1    5950 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 2200 5100 2200
+Connection ~ 5100 2200
+Wire Wire Line
+	5950 2500 5950 3100
+Wire Wire Line
+	5950 3100 5700 3100
+NoConn ~ 5700 2600
+NoConn ~ 5700 2700
+NoConn ~ 5700 2800
+Text Label 3700 2200 0    50   ~ 0
+4V
+Wire Notes Line
+	2050 2350 2450 2350
+Wire Notes Line
+	2450 2350 2450 2700
+Wire Notes Line
+	2450 2700 2050 2700
+Wire Notes Line
+	2050 2700 2050 2350
+Text Notes 1450 2800 0    50   ~ 0
+Remove @ VCC>15V
+$EndSCHEMATC
