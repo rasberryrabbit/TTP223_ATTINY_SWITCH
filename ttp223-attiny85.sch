@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:ttp223-attiny85-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -210,7 +211,7 @@ Wire Wire Line
 Wire Wire Line
 	6800 2850 7150 2850
 Wire Wire Line
-	5100 3700 7450 3700
+	5100 3700 6800 3700
 Wire Wire Line
 	7450 3700 7450 3050
 Connection ~ 5100 3700
@@ -279,4 +280,23 @@ Wire Notes Line
 	2050 2700 2050 2350
 Text Notes 1450 2800 0    50   ~ 0
 Remove @ VCC>15V
+$Comp
+L Device:R_US R6
+U 1 1 5DBED0FC
+P 6800 3300
+F 0 "R6" H 6868 3346 50  0000 L CNN
+F 1 "10k" H 6868 3255 50  0000 L CNN
+F 2 "" V 6840 3290 50  0001 C CNN
+F 3 "~" H 6800 3300 50  0001 C CNN
+	1    6800 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 3450 6800 3700
+Connection ~ 6800 3700
+Wire Wire Line
+	6800 3700 7450 3700
+Wire Wire Line
+	6800 3150 6800 3000
+Connection ~ 6800 3000
 $EndSCHEMATC
