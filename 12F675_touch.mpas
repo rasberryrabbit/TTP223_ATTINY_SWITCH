@@ -1,0 +1,28 @@
+program _12F675_touch;
+
+{ Declarations section }
+procedure Interrupt(); iv 0x0004; ics ICS_AUTO;
+begin
+  if GPIF_bit=1 then begin
+    if GP5_bit=1 then begin
+      GP4_bit:=not GP4_bit;
+    end;
+    GPIF_bit:=0;
+  end;
+end;
+
+begin
+  CMCON:=7;
+  ANSEL:=0;
+  { signal IO }
+  TRISIO4_bit:=0;
+  { port change input }
+  TRISIO5_bit:=1;
+  { Interrupt }
+  IOC5_bit:=1;
+  GPIE_bit:=1;
+  GIE_bit:=1;
+  Delay_100ms;
+  
+  while true do ;
+end.
