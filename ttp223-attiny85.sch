@@ -343,4 +343,14 @@ Wire Wire Line
 Connection ~ 4850 1200
 Wire Wire Line
 	4850 1200 5500 1200
+Wire Notes Line
+	3800 3150 7100 3150
+Wire Notes Line
+	7100 3150 7100 4750
+Wire Notes Line
+	7100 4750 3800 4750
+Wire Notes Line
+	3800 4750 3800 3150
+Text Notes 4100 3150 0    50   ~ 0
+12F675
 $EndSCHEMATC
