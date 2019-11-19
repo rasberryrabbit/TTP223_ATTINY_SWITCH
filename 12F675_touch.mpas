@@ -16,13 +16,27 @@ begin
   ANSEL:=0;
   { signal IO }
   TRISIO4_bit:=0;
+  GP4_bit:=0;
   { port change input }
   TRISIO5_bit:=1;
   { Interrupt }
   IOC5_bit:=1;
   GPIE_bit:=1;
   GIE_bit:=1;
+  { timer1 }
+  TMR1CS_bit:=0;
+  T1CKPS1_bit:=1;
+  T1CKPS0_bit:=0;
+  TMR1ON_bit:=1;
   Delay_100ms;
   
-  while true do ;
+  while true do begin
+    { reset watchdog }
+    if T1IF_bit=1 then begin
+      TMR1H:=0;
+      TMR1L:=0;
+      T1IF_bit:=0;
+      ClrWDT;
+    end;
+  end;
 end.
