@@ -1,12 +1,18 @@
 program _12F675_touch;
 
+var
+  G5L, G5C: bit;
+
 { Declarations section }
 procedure Interrupt(); iv 0x0004; ics ICS_AUTO;
 begin
   if GPIF_bit=1 then begin
-    if GP5_bit=1 then begin
-      GP4_bit:=not GP4_bit;
+    G5C:=GP5_bit;
+    if (G5L=1) and (G5C=0) and (T0IF_bit=1) then begin
+        GP4_bit:=not GP4_bit;
+        T0IF_bit:=0;
     end;
+    G5L:=G5C;
     GPIF_bit:=0;
   end;
 end;
@@ -28,8 +34,10 @@ begin
   T1CKPS1_bit:=1;
   T1CKPS0_bit:=0;
   TMR1ON_bit:=1;
+  G5L:=1;
   Delay_100ms;
-  
+  T0CS_bit:=0;
+
   while true do begin
     { reset watchdog }
     if T1IF_bit=1 then begin
